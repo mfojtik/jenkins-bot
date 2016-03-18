@@ -67,7 +67,7 @@ func pollRSSFeed(uri string, timeout int, cr xmlx.CharsetFunc) {
 			fmt.Fprintf(os.Stderr, "[e] %s: %s\n", uri, err)
 			return
 		}
-		<-time.After(time.Duration(feed.SecondsTillUpdate() * 1e9))
+		<-time.After(time.Duration(30 * time.Second))
 	}
 }
 
